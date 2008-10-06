@@ -1,0 +1,14 @@
+Build.PL
+Changes
+MANIFEST
+Makefile.PL
+README
+lib/HTTP/DetectUserAgent.pm
+t/00.load.t
+t/01.browser.t
+t/02.mobile.t
+t/03.crawler.t
+t/04.robot.t
+t/05.webservice.t
+t/06.portable.t
+META.yml                                 Module meta-data (added by MakeMaker)
