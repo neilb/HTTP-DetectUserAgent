@@ -1,5 +1,8 @@
 Revision history for HTTP-DetectUserAgent
 
+0.0.2  Sun Nov 01 11:01:00 2009
+       Fix Makefile.PL( add Test::Base to require modules )
+       Add detection code for iPhone and some Crawlers.
+
 0.0.1  Mon Sep 22 03:11:38 2008
        Initial release.
-

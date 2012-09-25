@@ -50,6 +50,15 @@ version: "6.0"
 vendor: "Microsoft"
 os: "Windows"
 
+=== Internet Explorer 3
+--- input
+Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0; GTB6; .NET CLR 1.1.4322) 
+--- expected
+name: "Internet Explorer"
+version: "8.0"
+vendor: "Microsoft"
+os: "Windows"
+
 === Sleipnir
 --- input
 Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.1.4322; .NET CLR 2.0.50727; InfoPath.1) Sleipnir/2.8.0
@@ -104,4 +113,12 @@ version: "3.0.2"
 vendor: "Mozilla"
 os: "Windows"
 
+=== iPhone
+--- input
+Mozilla/5.0 (iPhone; U; CPU iPhone OS 3_0_1 like Mac OS X; ja-jp) AppleWebKit/528.18 (KHTML, like Gecko) Version/4.0 Mobile/7A400 Safari/528.16
+--- expected
+name: "Safari"
+version: "4.0"
+vendor: "Apple"
+os: "iPhone OS"
 

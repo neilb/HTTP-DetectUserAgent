@@ -9,6 +9,7 @@ my $builder = Module::Build->new(
     dist_version_from   => 'lib/HTTP/DetectUserAgent.pm',
     requires => {
         'Test::More'      => 0,
+        'Test::Base'      => 0,
         'version'         => 0,
         'Class::Accessor' => 0,
     },

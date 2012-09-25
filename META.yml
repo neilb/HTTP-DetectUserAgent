@@ -1,13 +1,17 @@
-# http://module-build.sourceforge.net/META-spec.html
-#XXXXXXX This is a prototype!!!  It will change in the future!!! XXXXX#
-name:         HTTP-DetectUserAgent
-version:      0.01
-version_from: lib/HTTP/DetectUserAgent.pm
-installdirs:  site
-requires:
+--- #YAML:1.0
+name:                HTTP-DetectUserAgent
+version:             0.02
+abstract:            Yet another HTTP useragent string parser.
+license:             ~
+author:              
+    - Takaaki Mizuno <cpan@takaaki.info>
+generated_by:        ExtUtils::MakeMaker version 6.42
+distribution_type:   module
+requires:     
     Class::Accessor:               0
+    Test::Base:                    0
     Test::More:                    0
     version:                       0
-
-distribution_type: module
-generated_by: ExtUtils::MakeMaker version 6.30
+meta-spec:
+    url:     http://module-build.sourceforge.net/META-spec-v1.3.html
+    version: 1.3

@@ -10,6 +10,7 @@ WriteMakefile(
     PL_FILES            => {},
     PREREQ_PM => {
         'Test::More'      => 0,
+        'Test::Base'      => 0,
         'version'         => 0,
         'Class::Accessor' => 0,
     },

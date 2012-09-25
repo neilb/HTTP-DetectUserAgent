@@ -3,7 +3,7 @@ package HTTP::DetectUserAgent;
 use warnings;
 use strict;
 #use Carp;
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 use base qw(Class::Accessor);
 
 __PACKAGE__->mk_accessors(qw(name version vendor type os));
@@ -117,6 +117,9 @@ sub _check_crawler {
             # http://help.yahoo.co.jp/help/jp/search/indexing/indexing-15.html
             $self->{name} = 'Yahoo! Japan Crawler';
             $self->{vendor} = 'Yahoo';
+        }elsif( index($ua, 'yahoofeedseeker') != -1){
+            $self->{name} = 'YahooFeedSeeker';
+            $self->{vendor} = 'Yahoo';
         }
     }elsif( index($ua, 'msnbot') != -1){
         # http://search.msn.com/msnbot.htm
@@ -129,6 +132,10 @@ sub _check_crawler {
     }elsif( index($ua, 'baiduspider') != -1){
         # http://help.baidu.jp/system/05.html
         $self->{name} = 'Baiduspider';
+        $self->{vendor} = 'Baidu';
+    }elsif( index($ua, 'baidumobaider') != -1){
+        # http://help.baidu.jp/system/05.html
+        $self->{name} = 'BaiduMobaider';
         $self->{vendor} = 'Baidu';
     }elsif( index($ua, 'yeti') != -1 && index($ua, 'naver') != -1){
         # http://help.naver.com/robots/
@@ -150,7 +157,18 @@ sub _check_crawler {
         # http://www.archive.org/
         $self->{name} = 'Internet Archive';
         $self->{vendor} = 'Internet Archive';
-
+    }elsif( index($ua, 'tagoobot') != -1){
+        # http://www.tagoo.ru
+        $self->{name} = 'Tagoobot';
+        $self->{vendor} = 'Tagoo';
+    }elsif( index($ua, 'sogou web spider') != -1){
+        #http://www.sogou.com/docs/help/webmasters.htm#07
+        $self->{name} = 'Sogou';
+        $self->{vendor} = 'Sogou';
+    }elsif( index($ua, 'daumoa') != -1){
+        #http://ws.daum.net/aboutWebSearch.html
+        $self->{name} = 'Daumoa';
+        $self->{vendor} = 'Daum';
     }elsif( index($ua, 'spider') != -1 || index($ua, 'crawler') != -1 ){
         $self->{name} = 'Unknown Crawler';
     }
@@ -423,7 +441,9 @@ sub _check_portable {
 sub _parse_os {
     my ( $self, $ua ) = @_;
     return unless $ua;
-    if( $ua =~ /win(?:9[58]|dows|nt)/ ){
+    if( $ua =~ /iphone/ ){
+        $self->{os} = 'iPhone OS';
+    }elsif( $ua =~ /win(?:9[58]|dows|nt)/ ){
         $self->{os} = 'Windows';
     }elsif( $ua =~ /mac(?:intosh|_(?:powerpc|68000))/ ){
         $self->{os} = 'Macintosh';
@@ -442,7 +462,7 @@ HTTP::DetectUserAgent - Yet another HTTP useragent string parser.
 
 =head1 VERSION
 
-This document describes HTTP::DetectUserAgent version 0.0.1
+This document describes HTTP::DetectUserAgent version 0.0.2
 
 
 =head1 SYNOPSIS
@@ -473,7 +493,7 @@ Thanks to yappo-san and drry-san for fixing bugs and cleaning up my code.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2008 by Takaaki Mizuno
+Copyright (C) 2009 by Takaaki Mizuno
 
 This program is free software; you can redistribute it and/or modify it under the same terms as Perl itself.
 
