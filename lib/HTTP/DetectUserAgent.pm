@@ -3,7 +3,7 @@ package HTTP::DetectUserAgent;
 use warnings;
 use strict;
 #use Carp;
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 use base qw(Class::Accessor);
 
 __PACKAGE__->mk_accessors(qw(name version vendor type os));
@@ -452,36 +452,46 @@ sub _parse_os {
     }
 }
 
-1; # Magic true value required at end of module
+1;
+
 __END__
 
 =head1 NAME
 
 HTTP::DetectUserAgent - Yet another HTTP useragent string parser.
 
-
 =head1 VERSION
 
-This document describes HTTP::DetectUserAgent version 0.0.2
-
+This document describes HTTP::DetectUserAgent version 0.03
 
 =head1 SYNOPSIS
 
-    use HTTP::DetectUserAgent;
-    my $ua = HTTP::DetectUserAgent->new($useragent_string);
-    my $type    = $ua->type;
-    my $name    = $ua->name;
-    my $version = $ua->version;
-    my $vendor  = $ua->vendor;
-    my $os      = $ua->os;
+  use HTTP::DetectUserAgent;
+  my $ua = HTTP::DetectUserAgent->new($useragent_string);
+  my $type    = $ua->type;
+  my $name    = $ua->name;
+  my $version = $ua->version;
+  my $vendor  = $ua->vendor;
+  my $os      = $ua->os;
 
 =head1 DESCRIPTION
 
-HTTP::DetectUserAgent provides the parsing function for HTTP useragent strings. You can use it for determine which browser( or crawler, bot, and so on ) is accessing to your servers or web applications.
+HTTP::DetectUserAgent provides the parsing function for HTTP useragent strings.
+You can use it for determine which browser (or crawler, bot, and so on)
+is accessing to your servers or web applications.
 
 =head1 SEE ALSO
 
-L<HTTP::BrowserDetect>, L<HTML::ParseBrowser>
+There are a number of other modules that can be used to parse User-Agent strings:
+L<HTTP::BrowserDetect>, L<HTML::ParseBrowser>, L<HTTP::MobileAgent>,
+L<HTTP::UserAgentString::Parser>, L<Parse::HTTP::UserAgent>, and L<Woothee>.
+
+The following is a review of all perl modules on CPAN for parsing User-Agent strings:
+L<http://neilb.org/reviews/user-agent.html>
+
+=head1 REPOSITORY
+
+L<https://github.com/neilbowers/HTTP-DetectUserAgent>
 
 =head1 AUTHOR
 
@@ -493,7 +503,7 @@ Thanks to yappo-san and drry-san for fixing bugs and cleaning up my code.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2009 by Takaaki Mizuno
+Copyright (C) 2009-2012 by Takaaki Mizuno
 
 This program is free software; you can redistribute it and/or modify it under the same terms as Perl itself.
 
