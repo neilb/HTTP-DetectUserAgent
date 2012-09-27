@@ -1,5 +1,8 @@
 Revision history for perl module HTTP::DetectUserAgent
 
+0.04 2012-09-27
+    - Added YAML as a dependency (required by testsuite)
+
 0.03 2012-09-25
     - This release by Neil Bowers (thanks Takaaki-san for co-maint)
     - Updated SEE ALSO to link to other UA modules and my review

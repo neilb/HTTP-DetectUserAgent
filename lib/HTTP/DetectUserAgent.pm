@@ -3,7 +3,7 @@ package HTTP::DetectUserAgent;
 use warnings;
 use strict;
 #use Carp;
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 use base qw(Class::Accessor);
 
 __PACKAGE__->mk_accessors(qw(name version vendor type os));
