@@ -2,6 +2,12 @@ use strict;
 use warnings;
 use ExtUtils::MakeMaker;
 
+my $mm_ver = $ExtUtils::MakeMaker::VERSION;
+if ($mm_ver =~ /_/) { # dev version
+    $mm_ver = eval $mm_ver;
+    die $@ if $@;
+}
+
 WriteMakefile(
     NAME                => 'HTTP::DetectUserAgent',
     AUTHOR              => 'Takaaki Mizuno <cpan@takaaki.info>',
@@ -23,4 +29,10 @@ WriteMakefile(
             repository => 'https://github.com/neilbowers/HTTP-DetectUserAgent',
         },
     },
+
+    ($mm_ver >= 6.48
+        ? (MIN_PERL_VERSION => 5.006)
+        : ()
+    ),
+
 );
