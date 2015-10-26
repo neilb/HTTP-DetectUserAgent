@@ -1,6 +1,7 @@
 Revision history for perl module HTTP::DetectUserAgent
 
 0.06 2015-10-26 NEILB
+    - Switched to Dist::Zilla
     - Updated github repo URL after changing my github username
 
 0.05 2014-02-02
