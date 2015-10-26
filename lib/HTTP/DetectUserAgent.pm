@@ -492,7 +492,7 @@ L<http://neilb.org/reviews/user-agent.html>
 
 =head1 REPOSITORY
 
-L<https://github.com/neilbowers/HTTP-DetectUserAgent>
+L<https://github.com/neilb/HTTP-DetectUserAgent>
 
 =head1 AUTHOR
 
