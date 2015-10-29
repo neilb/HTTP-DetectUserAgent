@@ -1,5 +1,10 @@
 Revision history for perl module HTTP::DetectUserAgent
 
+0.07 2015-10-29 NEILB
+    - Explicitly use YAML in the testsuite, so it will get
+      picked up as a dependency for Test::Base.
+      Thanks to ANDK for re-opening RT#51152 (see 0.04 below)
+
 0.06 2015-10-26 NEILB
     - Switched to Dist::Zilla
     - Updated github repo URL after changing my github username
@@ -8,7 +13,7 @@ Revision history for perl module HTTP::DetectUserAgent
     - Specified min perl dependency of 5.6.0
 
 0.04 2012-09-27
-    - Added YAML as a dependency (required by testsuite)
+    - Added YAML as a dependency (required by testsuite). RT#51152
 
 0.03 2012-09-25
     - This release by Neil Bowers (thanks Takaaki-san for co-maint)

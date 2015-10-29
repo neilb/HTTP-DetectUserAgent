@@ -2,6 +2,7 @@ use strict;
 use warnings;
 use Test::Base;
 use HTTP::DetectUserAgent;
+use YAML 0.83;
 
 plan tests =>  (5 * blocks);
 
